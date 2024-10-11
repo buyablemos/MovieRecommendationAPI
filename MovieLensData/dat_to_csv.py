@@ -24,15 +24,12 @@ for file_path in [movies_path, ratings_path, users_path]:
 
     data = pd.read_csv(StringIO(decoded_contents), sep=';', engine='python')
 
-
     print(data.head())
-
 
     output_csv_path = file_path.replace('.dat','.csv')
     data.to_csv(output_csv_path, index=False,sep=';')
 
     print(f'Plik zapisany jako {output_csv_path}')
-
 
 file_path=users_path.replace('.dat','.csv')
 with open(file_path, 'rb') as file:
